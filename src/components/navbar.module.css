@@ -1,0 +1,40 @@
+.container {
+    height: 70px;
+    display: block;
+    background-color: #293669;
+  }
+
+  .menuButton {
+    position: absolute;
+    right: 15px;
+    top:18px;
+    width: 90px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 7px;
+    background: #6A80D8;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 9px;
+    padding-right: 2px;
+  }
+
+  .menuText {
+    float: left;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hamburger {
+    margin:auto;
+    float: right;
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 7px;
+    top: 5px;
+  }

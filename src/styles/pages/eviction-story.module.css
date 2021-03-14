@@ -1,0 +1,66 @@
+#stepZero {
+    height: auto;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stickyItems {
+    position: sticky;
+    top: 0;
+}
+
+.backgroundImage{
+    width:100%;
+    height: 100vh;
+    background-image: url("../../assets/images/eviction-story/eviction_notice.png");
+    height: 100vh;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.topGradient{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 10%, rgba(0, 0, 0, 0.419717) 50.63%, #1b1b1b 100%);
+    transform: rotate(180deg);
+    width: 100%;
+    height:144px;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 0;
+}
+
+.bottomGradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.419717) 22.63%, #000000 100%);
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.stepHeader {
+    color:white;
+    max-width: 240px;
+    margin: 22px 0px 0px 20px;
+    opacity: 0.76;
+    position: absolute;
+    top:0;
+}
+
+.storyText {
+    width: 85%;
+    top: 70%;
+    height: 30%;
+    z-index: 5;
+    color:white;
+    font-weight: bold;
+    position:absolute;
+    display: inline-block;
+    overflow-y: scroll;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-left: 20px;
+}
