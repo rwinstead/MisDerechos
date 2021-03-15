@@ -1,8 +1,15 @@
-#stepZero {
+html{ 
+    scroll-snap-type: y proximity;
+    overflow: scroll;
+}
+
+
+.stepContent {
     height: auto;
     width:100%;
     display: flex;
     flex-direction: column;
+
 }
 
 .stickyItems {
@@ -13,28 +20,41 @@
 .backgroundImage{
     width:100%;
     height: 100vh;
-    background-image: url("../../assets/images/eviction-story/eviction_notice.png");
     height: 100vh;
-    top: 0;
     background-size: cover;
     background-position: center;
+    scroll-snap-align: start;
+}
+
+#image1 {
+    background-image: url("../../assets/images/eviction-story/eviction_notice.png");
+}
+
+#image2 {
+    background-image: url("../../assets/images/eviction-story/calling_avlf.png");
+}
+
+#image3 {
+    background-image: url("../../assets//images/eviction-story/community_navigator.png");
 }
 
 .topGradient{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 10%, rgba(0, 0, 0, 0.419717) 50.63%, #1b1b1b 100%);
+    background: linear-gradient(180deg, #00000000, rgba(0,0,0,.4), rgba(0,0,0,1));
     transform: rotate(180deg);
     width: 100%;
-    height:144px;
+    height: 18%;
     position: absolute;
     top: 0;
     left:0;
     z-index: 0;
+    margin-top: -2px;
+    padding-top: 0;
 }
 
 .bottomGradient {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.419717) 22.63%, #000000 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00001) 0%, rgba(17, 17, 17, 0.22) 12.63%, #000000 100%);
     width: 100%;
-    height: 30%;
+    height: 35%;
     position: absolute;
     bottom: 0;
     z-index: 0;
@@ -50,17 +70,33 @@
     top:0;
 }
 
+
+.storyContainer {
+    position: absolute;
+    top:10%;
+    width:100%;
+    height:90%;
+    overflow: hidden;
+
+}
+
 .storyText {
     width: 85%;
-    top: 70%;
-    height: 30%;
+    height: 100%;
+    /* padding-top: 70%; */
     z-index: 5;
     color:white;
     font-weight: bold;
-    position:absolute;
+    position:relative;
     display: inline-block;
-    overflow-y: scroll;
+    overflow-y:auto;
     font-size: 18px;
     line-height: 1.6;
     padding-left: 20px;
+    mask-image: linear-gradient(0deg, black 50%, transparent 65%);
+    bottom:5px;
+}
+
+.storyText p {
+    margin-top: 120%;
 }
