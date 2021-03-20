@@ -8,7 +8,7 @@ import doorIcon from "../../assets/icons/doorBack.svg"
 export default function StoryBack(props){
 
     return (
-        <div className={doorStyles.root}>
+        <div>
             <Link to = {props.link}>
                 <img id={doorStyles.door} src={doorIcon} alt="Back" />
             </Link>

@@ -1,81 +1,74 @@
 import React from "react"
-import { Link } from "gatsby"
 import "@fontsource/open-sans"
-import DoorBack from "../components/story-mode/door-back"
+import StoryBack from "../components/story-mode/door-back"
 import * as EvictionStoryStyles from "../styles/pages/eviction-story.module.css"
+import SideNav from "../components/story-mode/side-nav"
+import { InView } from 'react-intersection-observer';
 
 export default class EvictionStory extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {currentScrollHeight: 0 };
-        this.storyContent = React.createRef();
-        this.handleTextScroll = this.handleTextScroll.bind(this);
+        this.state = {
+            step0Visible: false,
+            step1Visible: false,
+            step2Visible: false,
+            step3Visible: false,
+            step3aVisible: false,
+            step4Visible: false,
+            step5Visible: false,
+            step6Visible: false,
+            step6aVisible: false,
+        };
     }
-
-    // componentDidMount () {
-    //     window.onscroll =()=>{
-    //         this.setState({currentScrollHeight: this.storyContent.current.scrollY});
-    //         console.log(this.state.currentScrollHeight);
-    //    }
-    //  }
-
-    componentDidMount () {
-        // this.setState( {currentScrollHeight: this.storyContent.current.scrollTop});
-        // console.log(this.storyContent.current.scrollTop);
-        // this.storyContent.current.scrollTop = 90;
-    }
-
-    handleTextScroll (element) {
-        this.setState( {currentScrollHeight: this.storyContent.current.scrollTop});
-        console.log(this.storyContent.current.scrollTop);
-        console.log("bo");
-
-    }
-
-    // componentDidUpdate () {
-    //     console.log(this.storyContent.current.scrollTop);
-    // }
-
 
     render() {
-        // if(this.storyContent.current.scrollTop !== null){
-        // const opacity = Math.min(100 / this.storyContent.current.scrollTop, 1);
-        // }
-        let opacity = Math.min(100/this.state.currentScrollHeight, 1);
-        console.log(opacity);
 
-        //console.log(position);
         return (
         <main>
-            <DoorBack
+            <StoryBack
                 link = {'/'} //TODO add link to overview page when complete
             /> 
-            <section className={EvictionStoryStyles.stepContent}>
-                <div className={EvictionStoryStyles.stickyItems}>
-                    <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image1}></div>
-                    <div className={EvictionStoryStyles.topGradient}></div>
-                    <p className={EvictionStoryStyles.stepHeader}>Prólogo: Maria encuentra un aviso en su puerta</p>
-                    <div className={EvictionStoryStyles.storyContainer}>
-                        <article className={EvictionStoryStyles.storyText}>
-                        <p></p>
+            <SideNav visibility={this.state} />
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step0"
+                >
+                    <div className={EvictionStoryStyles.stickyItems}>
+                        <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image1}></div>
+                        <div className={EvictionStoryStyles.topGradient}></div>
+                        <p className={EvictionStoryStyles.stepHeader}>{`Prólogo: Maria encuentra un aviso en su puerta`}</p>
+                        <div className={EvictionStoryStyles.storyContainer}>
+                            <article className={EvictionStoryStyles.storyText}>
+                            <p></p>
 
-                        Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
+                            Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
 
-                        Es un aviso de desalojo en el que se le informa de que no ha pagado la renta de este mes. El aviso dice que si no paga el saldo restante en 5 días, el edificio emprenderá acciones legales contra ella.<br/><br/>
+                            Es un aviso de desalojo en el que se le informa de que no ha pagado la renta de este mes. El aviso dice que si no paga el saldo restante en 5 días, el edificio emprenderá acciones legales contra ella.<br/><br/>
 
-                        María temía que esto pasara. Hace apenas unas semanas, perdió su trabajo principal por culpa del COVID-19, y no pudo pagar toda la renta de este mes.<br/><br/>
+                            María temía que esto pasara. Hace apenas unas semanas, perdió su trabajo principal por culpa del COVID-19, y no pudo pagar toda la renta de este mes.<br/><br/>
 
-                        Al principio, María se asusta al leer la carta. Le preocupa que su familia se vea obligada a abandonar su casa.<br/><br/>
+                            Al principio, María se asusta al leer la carta. Le preocupa que su familia se vea obligada a abandonar su casa.<br/><br/>
 
-                        Pero María tiene derechos, y existen medidas que puede tomar para protegerse.<br/><br/>
-                        </article>
+                            Pero María tiene derechos, y existen medidas que puede tomar para protegerse.<br/><br/>
+                            </article>
+                        </div>
+                        <div className={EvictionStoryStyles.bottomGradient}></div>
                     </div>
-                    <div className={EvictionStoryStyles.bottomGradient}></div>
-                </div>
-            </section>    
+                </section>   
+                )}
+            </InView> 
 
-            <section className={EvictionStoryStyles.stepContent}>
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step1Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step1"
+                >
                 <div className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image2}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
@@ -95,29 +88,202 @@ export default class EvictionStory extends React.Component {
                     <div className={EvictionStoryStyles.bottomGradient}></div>
                 </div>
             </section>
+            )}
+            </InView> 
 
-            <section className={EvictionStoryStyles.stepContent}>
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step2Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step2"
+                >
                 <div className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image3}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
-                    <p className={EvictionStoryStyles.stepHeader}>Paso 1: Se pone en contacto con abogados gratis a AVLF.</p>
+                    <p className={EvictionStoryStyles.stepHeader}>Paso 2: Encuentra su contracto de alquiler y comprenda las estipulaciónes.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
                         <article className={EvictionStoryStyles.storyText}>
                         <p></p>
-                        María empieza por llamar a La Fundación de Abogados Voluntarios de Atlanta (AVLF en inglés) para informarles de su situación. Es mejor informarles desde el principio y pedirles consejo.<br/><br/>
+                        María revisa el contrato de alquiler pero se siente abrumada. Es más largo de lo que recuerda y hay muchas palabras difíciles de entender.<br/><br/>
 
-                        Le recomiendan que empiece por leer lo que dice su  contrato de alquiler en relación con la falta de pagos y que les mantenga al corriente de su situación. <br/><br/>
+                        Para que la ayuden a leerlo, María llama a Welcoming Atlanta y se pone en contacto con un miembro de la comunidad que puede revisar el contrato de alquiler con ella. Pide una cita con una asesora comunitaria llamada Rosalinda que puede reunirse con ella al día siguiente.<br/><br/>
 
-                        Después de la llamada, María intenta encontrar el contrato de alquiler que firmó cuando se mudó a su apartamento.<br/><br/>
+                        ———<br/><br/>
 
-                        Por suerte, tiene una copia impresa que guarda en una caja debajo de la cama. Si no la tuviera, siempre puede pedir una copia a la oficina de alquiler.<br/><br/>
+                        A la mañana siguiente, María se sienta con Rosalinda, de Welcoming Atlanta.<br/><br/>
+
+                        "Desafortunadamente, el contrato de alquiler dice que si no pagas, tienes que pagar multas por cada mes que dejes de pagar'', explica Rosalinda.<br/><br/>
+
+                        "Para evitar esto, primero debes ir a la oficina de arrendamiento e intentar llegar a un acuerdo con la administración de tu edificio. Explica tu situación y propón hacer pagos parciales cada mes sin recargos por retraso".<br/><br/>
+
+                        "Es que tengo miedo de que no me escuchen porque mi inglés no es bueno", responde María.<br/><br/>
+
+                        "Entiendo cómo te sientes, y puedo acompañarte con mucho gusto si quieres ese extra apoyo", dice Rosalinda.<br/><br/>
+
+                        "Y si no puedes llegar a un acuerdo, entonces puedes presentar la moratoria de desalojos de los CDC, que te protege contra el desalojo hasta al menos el 31 de marzo de este año. Mientras tanto, deberías solicitar ayuda financiera que puedan ayudarte a conseguir el dinero restante".<br/><br/>
+
+                        María le agradece su tiempo y decide ir por su cuenta, acordando visitar la oficina de arrendamiento al día siguiente.<br/><br/>
                         </article>
                     </div>
                     <div className={EvictionStoryStyles.bottomGradient}></div>
                 </div>
             </section>    
+            )}
+            </InView>
+
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step3Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step3"
+                >
+                <div className={EvictionStoryStyles.stickyItems}>
+                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step3aVisible ? EvictionStoryStyles.image4a : EvictionStoryStyles.image4}></div>
+                    <div className={EvictionStoryStyles.topGradient}></div>
+                    <p className={EvictionStoryStyles.stepHeader}>Paso 3: Explica su situación a la oficina de arrendamiento de su apartamento.</p>
+                    <div className={EvictionStoryStyles.storyContainer}>
+                        <article className={EvictionStoryStyles.storyText}>
+                        <p></p>
+                        Han pasado dos días desde que María recibió un aviso de desalojo.<br/><br/>
+
+                        Esa mañana, María recoge su contrato de alquiler y el aviso de desalojo y se dirige a la oficina de arrendamiento de su apartamento.<br/><br/>
+
+                        Al llegar, María le muestra al representante de la oficina de arrendamiento un aviso de desalojo y le explica que no puede pagar la renta porque COVID-19 ha cerrado el negocio en el que trabajaba.<br/><br/>
+                        
+                        <InView as="div" threshold={.2} onChange={(inView, entry) => this.setState({step3aVisible : inView})}>
+                        Puedo hacer pagos parciales de la renta hasta que encuentre otro trabajo. También voy a solicitar programas de ayuda a la renta para obtener más ayuda. Espero que puedan entender mi situación", dice María.
+                        
+                        <br/><br/>
+
+                        La agente sacude la cabeza.<br/><br/>
+
+                        "Lamentablemente, no podemos hacer nada por usted. Debe pagar la totalidad de la renta antes de la fecha límite, dentro de tres días, o mudarse".<br/><br/>
+
+                        María se siente frustrada por la respuesta, pero se lo esperaba. Pide una dirección de correo electrónico y un número de teléfono al agente para poder hacer un seguimiento.<br/><br/>
+
+                        María sale de la oficina. Una vez en casa, María envía un correo electrónico a la dirección que le han dado, resumiendo la interacción que tuvo lugar en la oficina. <br/><br/>
+
+                        Si María no tuviera una dirección de correo electrónico, también puede pedirle a Rosalinda que le ayude a enviar uno.<br/><br/>
+
+                        Documentar lo sucedido es muy importante y podría ayudar a María en el futuro si hay alguna disputa sobre lo sucedido.<br/><br/>
+                        </InView>
+                        </article>
+                    </div>
+                    <div className={EvictionStoryStyles.bottomGradient}></div>
+                </div>
+            </section>    
+            )}
+            </InView>
+
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step4Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step4"
+                >
+                <div className={EvictionStoryStyles.stickyItems}>
+                    <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image5}></div>
+                    <div className={EvictionStoryStyles.topGradient}></div>
+                    <p className={EvictionStoryStyles.stepHeader}>Paso 4: Presenta la moratoria de desalojos de los CDC. </p>
+                    <div className={EvictionStoryStyles.storyContainer}>
+                        <article className={EvictionStoryStyles.storyText}>
+                        <p></p>
+                        Esa noche, María sigue el consejo de Rosalinda y presenta la moratoria de desalojos de los CDC.<br/><br/>
+
+                        La moratoria impide el desalojo de cualquier inquilino que cumpla los requisitos, hasta el 31 de marzo de 2021.<br/><br/>
+
+                        Para iniciar el proceso, María visita en su teléfono la dirección web nomasdesalojos.com, una página web que le informa de si la moratoria la puede ayudar.<br/><br/>
+
+                        Después de responder a algunas preguntas, María ve que puede acogerse a la moratoria y firma el documento y lo recibe directamente en su teléfono.<br/><br/>
+
+                        Tras recibirlo, utiliza el correo electrónico que le dió el agente de su oficina de arrendamiento  envía el formulario firmado. En el se explica que está protegida contra el desalojo gracias a la moratoria, pero que seguirá trabajando con el edificio para pagar su renta cuando pueda.<br/><br/>
+
+                        Si María no pudiera enviarlo por correo electrónico, también podría volver a la oficina de arrendamiento y mostrarles la carta en su teléfono, o imprimirla y entregarla.<br/><br/>
+
+                        </article>
+                    </div>
+                    <div className={EvictionStoryStyles.bottomGradient}></div>
+                </div>
+            </section>    
+            )}
+            </InView>
+
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step5Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step5"
+                >
+                <div className={EvictionStoryStyles.stickyItems}>
+                    <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image6}></div>
+                    <div className={EvictionStoryStyles.topGradient}></div>
+                    <p className={EvictionStoryStyles.stepHeader}>Paso 5: Solicita la ayuda a la vivienda.</p>
+                    <div className={EvictionStoryStyles.storyContainer}>
+                        <article className={EvictionStoryStyles.storyText}>
+                        <p></p>
+
+                        Al día siguiente, María comienza el proceso de solicitud de ayuda para la vivienda.<br/><br/>
+
+                        Visita las páginas web de las organizaciones que le ha proporcionado el navegador comunitario, explicando que ha perdido su trabajo y que los tres miembros de su familia dependen de sus ingresos.<br/><br/>
+
+                        Para cada formulario que presenta, María toca una foto de su solicitud para documentar su trabajo.<br/><br/>
+
+                        Cuando termina, María respira hondo y espera sus respuestas.<br/><br/>
+
+                        </article>
+                    </div>
+                    <div className={EvictionStoryStyles.bottomGradient}></div>
+                </div>
+            </section>    
+            )}
+            </InView>
+
+            <InView threshold={.6} onChange={(inView, entry) => this.setState({step6Visible : inView})}>
+            {({ inView, ref, entry }) => (
+                <section 
+                    ref={ref}
+                    className={EvictionStoryStyles.stepContent}
+                    id="step6"
+                >
+                <div className={EvictionStoryStyles.stickyItems}>
+                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step6aVisible ? EvictionStoryStyles.image7a : EvictionStoryStyles.image7}></div>
+                    <div className={EvictionStoryStyles.topGradient}></div>
+                    <p className={EvictionStoryStyles.stepHeader}>Paso 6: Hace un plan para pagar su renta.</p>
+                    <div className={EvictionStoryStyles.storyContainer}>
+                        <article className={EvictionStoryStyles.storyText}>
+                        <p></p>
+
+                        María siente que se ha quitado un enorme peso de encima. Su familia podrá permanecer en su casa, pero ahora tiene que hacer un plan para pagar toda la renta que debe antes de que finalice la moratoria de los CDC (31 de marzo de 2021).<br/><br/>
+
+                        María se toma un tiempo para idear una forma de volver a ponerse en pie.<br/><br/>
+
+                        En primer lugar, seguirá pagando lo que pueda para la renta mensual. Así evitará acumular una gran deuda y reducirá el importe de las cuotas de retraso que debe pagar al edificio.<br/><br/>
+
+                        A continuación, se pone a buscar un trabajo nuevo que pueda reemplazar sus ingresos perdidos. Vuelve a hablar con Welcoming Atlanta para ver qué oportunidades existen en su barrio.<br/><br/>
+
+                        Por último, María continúa con el seguimiento de sus solicitudes de ayuda a la renta, hablando de nuevo con ellos para comprobar el estado de su solicitud y asegurarse de que han procesado sus documentos correctamente.<br/><br/>
+                        
+                        <InView as="div" threshold={.2} onChange={(inView, entry) => this.setState({step6aVisible : inView})}>
+
+                        En los últimos días, María se ha sentido preocupada y un poco abrumada, pero también ha tomado todas las medidas posibles para protegerse a sí misma y a su familia de ser desalojada durante el COVID.<br/><br/>
+
+                        La lucha de María no ha terminado. Pero sabe que en su casa tiene derechos que nadie puede quitarle.<br/><br/>
+
+                        </InView>
+                        </article>
+                    </div>
+                    <div className={EvictionStoryStyles.bottomGradient}></div>
+                </div>
+            </section>    
+            )}
+            </InView>
 
         </main>
         );
     }
 }
+
