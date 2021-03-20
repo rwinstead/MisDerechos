@@ -3,7 +3,8 @@ import "@fontsource/open-sans"
 import StoryBack from "../components/story-mode/door-back"
 import * as EvictionStoryStyles from "../styles/pages/eviction-story.module.css"
 import SideNav from "../components/story-mode/side-nav"
-import { InView } from 'react-intersection-observer';
+import { InView } from 'react-intersection-observer'
+import ReactTooltip from 'react-tooltip'
 
 export default class EvictionStory extends React.Component {
 
@@ -37,17 +38,35 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step0"
                 >
-                    <div className={EvictionStoryStyles.stickyItems}>
+                    <div onClick={() => { ReactTooltip.hide(this.fooRef) }} className={EvictionStoryStyles.stickyItems}>
                         <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image1}></div>
                         <div className={EvictionStoryStyles.topGradient}></div>
                         <p className={EvictionStoryStyles.stepHeader}>{`Prólogo: Maria encuentra un aviso en su puerta`}</p>
                         <div className={EvictionStoryStyles.storyContainer}>
                             <article className={EvictionStoryStyles.storyText}>
-                            <p></p>
+                            <p id={EvictionStoryStyles.topIndent}></p>
 
                             Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
 
-                            Es un aviso de desalojo en el que se le informa de que no ha pagado la renta de este mes. El aviso dice que si no paga el saldo restante en 5 días, el edificio emprenderá acciones legales contra ella.<br/><br/>
+                                  <p 
+                                    ref={ref => this.fooRef = ref} 
+                                    data-tip='Un <span style="color:#E7BE48"> aviso de desalojo </span>es cualquier comunicación escrita o verbal de su proprietario que le exige cumplir o desocupar su casa. El manager debe dar este paso antes de solicitar el desalojo en la corte. Debería especificar cuánto tiempo tienes que cumplir (e.g. 5 días) antes tomar accíon.' 
+                                    data-multiline={true}
+                                    data-offset="{'top': 10}"
+                                    data-border={true}
+                                    data-border-color={"#999999"}
+                                    backgroundColor={"1E1E1E"}
+                                    >
+                                    </p>
+                                    Es un <button
+                                    type="button"
+                                    className={EvictionStoryStyles.toolTipDefine}
+                                    onClick={() => { ReactTooltip.show(this.fooRef) }}
+                                >
+                                aviso de desalojo
+                                </button><ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>  en
+
+                             el que se le informa de que no ha pagado la renta de este mes. El aviso dice que si no paga el saldo restante en 5 días, el edificio emprenderá acciones legales contra ella.<br/><br/>
 
                             María temía que esto pasara. Hace apenas unas semanas, perdió su trabajo principal por culpa del COVID-19, y no pudo pagar toda la renta de este mes.<br/><br/>
 

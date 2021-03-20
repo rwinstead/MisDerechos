@@ -1,11 +1,12 @@
-html{ 
-    scroll-snap-type: y mandatory;
+/* html{ 
+      scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
 
-}
+} */
 
-body {
-    scroll-snap-type: y mandatory;
-}
+
 
 
 .stepContent {
@@ -13,7 +14,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 .stickyItems {
@@ -110,22 +111,50 @@ body {
 }
 
 .storyText {
-    width: 85%;
-    height: 100%;
+    width: 80%;
+    top: 50%;
+    height: 50%;
     /* padding-top: 70%; */
     z-index: 5;
     color:white;
     font-weight: bold;
     position:relative;
     display: inline-block;
-    overflow-y:auto;
+    overflow-y: scroll;
     font-size: 18px;
     line-height: 1.6;
     padding-left: 20px;
-    mask-image: linear-gradient(0deg, black 50%, transparent 65%);
-    bottom:5px;
+    /* mask-image: linear-gradient(180deg, black 85%, transparent 95%); */
+    bottom:30px;
 }
 
-.storyText p {
+/* #topIndent {
     margin-top: 120%;
+} */
+
+.toolTipDefine {
+    background: #A67E03 url("../../assets/icons/tap.svg") no-repeat;
+    background-position: 99% 50%;
+    padding: 0px 38px 0px 10px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+    display: inline !important;
+
+}
+
+.toolTipContent  {
+    max-width: 70vw !important;
+    text-align: left !important;
+    border-radius: 20px !important;
+    background-color: #1E1E1E !important;
+    opacity: 1 !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    mask-image: unset !important;
+    overflow: auto;
 }
