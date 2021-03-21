@@ -59,9 +59,6 @@ export default class EvictionStory extends React.Component {
                                     data-multiline={true}
                                     //data-offset="{'top': 10}"
                                     data-border={true}
-                                    data-border-color={"#999999"}
-                                    backgroundColor={"1E1E1E"}
-                                    arrowColor={"#999999"}
                                     place="top"
                                     className={EvictionStoryStyles.toolTipDefine}
                                     onClick={() => { ReactTooltip.show(this.fooRef) }}
@@ -138,9 +135,6 @@ export default class EvictionStory extends React.Component {
                             data-multiline={true}
                             //data-offset="{'top': 10}"
                             data-border={true}
-                            data-border-color={"#999999"}
-                            backgroundColor={"1E1E1E"}
-                            arrowColor={"#999999"}
                             place="top"
                             className={EvictionStoryStyles.toolTipDefine}
                             onClick={() => { ReactTooltip.show(this.contratoRef) }}
@@ -227,9 +221,6 @@ export default class EvictionStory extends React.Component {
                             data-multiline={true}
                             //data-offset="{'top': 10}"
                             data-border={true}
-                            data-border-color={"#999999"}
-                            backgroundColor={"1E1E1E"}
-                            arrowColor={"#999999"}
                             place="top"
                             className={EvictionStoryStyles.toolTipDefine}
                             onClick={() => { ReactTooltip.show(this.CDCRef) }}
