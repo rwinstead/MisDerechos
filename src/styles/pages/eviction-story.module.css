@@ -144,17 +144,31 @@
     font-size: 18px;
     line-height: 1.6;
     font-weight: bold;
-    display: inline !important;
 
 }
 
+.toolTipResource {
+    background: #4387C5 url("../../assets/icons/tap.png") no-repeat;
+    background-position: 99% 50%;
+    background-size: 35px 35px;
+    padding: 0px 38px 0px 10px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-family: "Open Sans";
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
 .toolTipContent  {
-    max-width: 70vw !important;
+    max-width: 62vw !important;
     text-align: left !important;
     border-radius: 20px !important;
     background-color: #1E1E1E !important;
     opacity: 1 !important;
     font-size: 15px !important;
-    line-height: 1.4 !important;
-    font-weight: bold;
+    /* line-height: 1.4 !important; */
+    font-weight: normal;
+    pointer-events: auto !important;
 }

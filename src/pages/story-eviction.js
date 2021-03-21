@@ -5,6 +5,9 @@ import * as EvictionStoryStyles from "../styles/pages/eviction-story.module.css"
 import SideNav from "../components/story-mode/side-nav"
 import { InView } from 'react-intersection-observer'
 import ReactTooltip from 'react-tooltip'
+import telephoneIcon from "../assets/icons/telephone.svg"
+import clockIcon from "../assets/icons/clock.svg"
+import internetIcon from "../assets/icons/internet.svg"
 
 export default class EvictionStory extends React.Component {
 
@@ -31,7 +34,8 @@ export default class EvictionStory extends React.Component {
                 link = {'/'} //TODO add link to overview page when complete
             /> 
             <SideNav visibility={this.state} />
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
+            <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -44,23 +48,21 @@ export default class EvictionStory extends React.Component {
                         <p className={EvictionStoryStyles.stepHeader}>{`Prólogo: Maria encuentra un aviso en su puerta`}</p>
                         <div className={EvictionStoryStyles.storyContainer}>
                             <article className={EvictionStoryStyles.storyText}>
-                            <p id={EvictionStoryStyles.topIndent}></p>
+                            <p></p>
 
                             Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
 
-                                <p 
+                                    Es un <button
+                                    type="button"
                                     ref={ref => this.fooRef = ref} 
-                                    data-tip='Un <span style="color:#E7BE48"> aviso de desalojo </span>es cualquier comunicación escrita o verbal de su proprietario que le exige cumplir o desocupar su casa. El manager debe dar este paso antes de solicitar el desalojo en la corte. Debería especificar cuánto tiempo tienes que cumplir (e.g. 5 días) antes tomar accíon.' 
+                                    data-tip='Un <span style="color:#E7BE48"> aviso de desalojo </span>es cualquier comunicación escrita o verbal de su proprietario que le exige cumplir o desocupar su casa. El manager debe dar este paso antes de solicitar el desalojo en la corte. Debería especificar cuánto tiempo tienes que cumplir (p.e. 5 días) antes tomar accíon.' 
                                     data-multiline={true}
-                                    data-offset="{'top': 10}"
+                                    //data-offset="{'top': 10}"
                                     data-border={true}
                                     data-border-color={"#999999"}
                                     backgroundColor={"1E1E1E"}
                                     arrowColor={"#999999"}
-                                >
-                                    </p>
-                                    Es un <button
-                                    type="button"
+                                    place="top"
                                     className={EvictionStoryStyles.toolTipDefine}
                                     onClick={() => { ReactTooltip.show(this.fooRef) }}
                                 >
@@ -78,26 +80,52 @@ export default class EvictionStory extends React.Component {
                         </div>
                         <div className={EvictionStoryStyles.bottomGradient}></div>
                     </div>
-                    <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>
+                    
                 </section>   
                 )}
             </InView> 
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step1Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step1Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
                     className={EvictionStoryStyles.stepContent}
                     id="step1"
                 >
-                <div className={EvictionStoryStyles.stickyItems}>
+                <div onClick={() => { ReactTooltip.hide(this.avlfRef) }}className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image2}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 1: Se pone en contacto con abogados gratis a AVLF.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
                         <article className={EvictionStoryStyles.storyText}>
                         <p></p>
-                        María empieza por llamar a La Fundación de Abogados Voluntarios de Atlanta (AVLF en inglés) para informarles de su situación. Es mejor informarles desde el principio y pedirles consejo.<br/><br/>
+                        María empieza por llamar a La Fundación de Abogados Voluntarios de 
+
+                        Atlanta  <button
+                                    type="button"
+                                    ref={ref => this.avlfRef = ref} 
+                                    data-tip={`
+                                        <span style="font-size:16px; font-weight:bold;">Fundación de Abogados Voluntarios de Atlanta (AVLF)</span><p style="margin: 0;"></p>
+                                        <span style="font-size:12px; color:#BBBBBB;">Servicios Legales</span><p style="margin: 0; padding-bottom:10px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${telephoneIcon} width="15" height="15"><a style="color:#8BADFD;" href="tel:404-521-0790">(404) 521-0790</a><p style="margin: 0; padding-bottom:4px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${clockIcon} width="15" height="15"><span>L - V de 9am a 1pm</span><p style="margin: 0; padding-bottom:4px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${internetIcon} width="15" height="15"><a style="color:#8BADFD;" href="https://avlf.org/get-help/evictions/" target="_blank">avlf.org</a><p style="margin: 0; padding-bottom:12px;"></p>
+                                        <div style="font-size:13px; line-height:1.2;">AVLF proporciona a cada inquilino que cumpla con sus requisitos de ingresos un asesoramiento legal detallado.</div><p style="margin: 0; padding-bottom:12px;"></p>
+                                        <div style="font-size:12px; line-height:1.2; color: #BBBBBB;">Consejos: Cuando llama, pregunta por Pierce; diles que Welcoming Atlanta lo envío.</div>
+
+                                    `}
+                                    data-multiline={true}
+                                    //data-offset="{'top': 10}"
+                                    data-border={true}
+                                    data-place={"right"}
+                                    className={EvictionStoryStyles.toolTipResource}
+                                    onClick={() => { ReactTooltip.show(this.avlfRef) }} 
+                                    >
+                        {/* <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/> */}
+
+                        (AVLF) </button>  para
+
+                        informarles de su situación. Es mejor informarles desde el principio y pedirles consejo.<br/><br/>
 
                         Le recomiendan que empiece por leer lo que dice su  contrato de alquiler en relación con la falta de pagos y que les mantenga al corriente de su situación. <br/><br/>
 
@@ -112,7 +140,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView> 
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step2Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step2Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -153,7 +181,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step3Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step3Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -198,7 +226,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step4Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step4Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -232,7 +260,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step5Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step5Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -263,7 +291,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.6} onChange={(inView, entry) => this.setState({step6Visible : inView})}>
+            <InView threshold={.53} onChange={(inView, entry) => this.setState({step6Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
