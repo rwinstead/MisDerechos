@@ -92,7 +92,7 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step1"
                 >
-                <div onClick={() => { ReactTooltip.hide(this.avlfRef) }}className={EvictionStoryStyles.stickyItems}>
+                <div onClick={() => { ReactTooltip.hide(this.avlfRef) }} className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image2}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 1: Se pone en contacto con abogados gratis a AVLF.</p>
@@ -108,7 +108,7 @@ export default class EvictionStory extends React.Component {
                                         <span style="font-size:16px; font-weight:bold;">Fundación de Abogados Voluntarios de Atlanta (AVLF)</span><p style="margin: 0;"></p>
                                         <span style="font-size:12px; color:#BBBBBB;">Servicios Legales</span><p style="margin: 0; padding-bottom:10px;"></p>
                                         <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${telephoneIcon} width="15" height="15"><a style="color:#8BADFD;" href="tel:404-521-0790">(404) 521-0790</a><p style="margin: 0; padding-bottom:4px;"></p>
-                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${clockIcon} width="15" height="15"><span>L - V de 9am a 1pm</span><p style="margin: 0; padding-bottom:4px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${clockIcon} width="15" height="15"><span>L - J de 9am a 1pm</span><p style="margin: 0; padding-bottom:4px;"></p>
                                         <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${internetIcon} width="15" height="15"><a style="color:#8BADFD;" href="https://avlf.org/get-help/evictions/" target="_blank">avlf.org</a><p style="margin: 0; padding-bottom:12px;"></p>
                                         <div style="font-size:13px; line-height:1.2;">AVLF proporciona a cada inquilino que cumpla con sus requisitos de ingresos un asesoramiento legal detallado.</div><p style="margin: 0; padding-bottom:12px;"></p>
                                         <div style="font-size:12px; line-height:1.2; color: #BBBBBB;">Consejos: Cuando llama, pregunta por Pierce; diles que Welcoming Atlanta lo envío.</div>
@@ -117,17 +117,38 @@ export default class EvictionStory extends React.Component {
                                     data-multiline={true}
                                     //data-offset="{'top': 10}"
                                     data-border={true}
-                                    data-place={"right"}
+                                    // data-place={"right"}
                                     className={EvictionStoryStyles.toolTipResource}
                                     onClick={() => { ReactTooltip.show(this.avlfRef) }} 
                                     >
-                        {/* <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/> */}
 
-                        (AVLF) </button>  para
+                        (conocido como AVLF) </button>  para
 
                         informarles de su situación. Es mejor informarles desde el principio y pedirles consejo.<br/><br/>
 
-                        Le recomiendan que empiece por leer lo que dice su  contrato de alquiler en relación con la falta de pagos y que les mantenga al corriente de su situación. <br/><br/>
+                        Le recomiendan que empiece por leer lo que dice su  <button
+                            type="button"
+                            ref={ref => this.contratoRef = ref} 
+                            data-tip={`Un <span style="color:#E7BE48"> contrato de alquiler </span>es un documento entre un propietario y un residente. En la mayoría de contratos usted encontrará lo siguiente:<p style="margin: 0; padding-bottom:10px;"></p>
+                                    <span style="font-size:13px;"><div>• El valor del precio del alquiler.</div>
+                                    <div>• Quién es el responsable de pagar las cuentas de los servicios básicos</div>
+                                    <div>• Quién se hará cargo de los desperfectos</div>
+                                    <div>• Las penalidades por una falta de pago</div></span>
+                            `}
+                            data-multiline={true}
+                            //data-offset="{'top': 10}"
+                            data-border={true}
+                            data-border-color={"#999999"}
+                            backgroundColor={"1E1E1E"}
+                            arrowColor={"#999999"}
+                            place="top"
+                            className={EvictionStoryStyles.toolTipDefine}
+                            onClick={() => { ReactTooltip.show(this.contratoRef) }}
+                        >
+                        contrato de alquiler
+                        </button>  en 
+
+                        relación con la falta de pagos y que les mantenga al corriente de su situación. <br/><br/>
 
                         Después de la llamada, María intenta encontrar el contrato de alquiler que firmó cuando se mudó a su apartamento.<br/><br/>
 
@@ -147,7 +168,7 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step2"
                 >
-                <div className={EvictionStoryStyles.stickyItems}>
+                <div onClick={() => { ReactTooltip.hide(this.waRef) }} className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image3}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 2: Encuentra su contracto de alquiler y comprenda las estipulaciónes.</p>
@@ -156,7 +177,32 @@ export default class EvictionStory extends React.Component {
                         <p></p>
                         María revisa el contrato de alquiler pero se siente abrumada. Es más largo de lo que recuerda y hay muchas palabras difíciles de entender.<br/><br/>
 
-                        Para que la ayuden a leerlo, María llama a Welcoming Atlanta y se pone en contacto con un miembro de la comunidad que puede revisar el contrato de alquiler con ella. Pide una cita con una asesora comunitaria llamada Rosalinda que puede reunirse con ella al día siguiente.<br/><br/>
+                        Para que la ayuden a leerlo, María llama  
+
+                        a  <button
+                                    type="button"
+                                    ref={ref => this.waRef = ref} 
+                                    data-tip={`
+                                        <span style="font-size:16px; font-weight:bold;">Welcoming Atlanta</span><p style="margin: 0;"></p>
+                                        <span style="font-size:12px; color:#BBBBBB;">Apoyo de comunidad</span><p style="margin: 0; padding-bottom:10px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${telephoneIcon} width="15" height="15"><a style="color:#8BADFD;" href="tel:470-698-5463">(470) 698-5463 (Pedro Pimentel)</a><p style="margin: 0; padding-bottom:4px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${clockIcon} width="15" height="15"><span>L - J de 9am a 4pm</span><p style="margin: 0; padding-bottom:4px;"></p>
+                                        <img style="vertical-align: text-bottom; margin-right: 10px;" src= ${internetIcon} width="15" height="15"><a style="color:#8BADFD;" href="https://www.welcomingatlanta.com/" target="_blank">welcomingatlanta.com</a><p style="margin: 0; padding-bottom:12px;"></p>
+                                        <div style="font-size:13px; line-height:1.2;">Welcoming Atlanta quiere mejorar la calidad de vida de todos los immigrantes de Atlanta a través de programas y polícias. </div><p style="margin: 0; padding-bottom:12px;"></p>
+                                        <div style="font-size:12px; line-height:1.2; color: #BBBBBB;">Consejos: Navigadoras de communidad tienen horas en el sitio para ayudarlo con muchas cosas. Pregunta sobre despensas de comidas.</div>
+
+                                    `}
+                                    data-multiline={true}
+                                    //data-offset="{'top': 10}"
+                                    data-border={true}
+                                    // data-place={"right"}
+                                    className={EvictionStoryStyles.toolTipResource}
+                                    onClick={() => { ReactTooltip.show(this.waRef) }} 
+                                    >
+
+                        Welcoming Atlanta </button>  y
+
+                        se pone en contacto con un miembro de la comunidad que puede revisar el contrato de alquiler con ella. Pide una cita con una asesora comunitaria llamada Rosalinda que puede reunirse con ella al día siguiente.<br/><br/>
 
                         ———<br/><br/>
 
@@ -170,7 +216,28 @@ export default class EvictionStory extends React.Component {
 
                         "Entiendo cómo te sientes, y puedo acompañarte con mucho gusto si quieres ese extra apoyo", dice Rosalinda.<br/><br/>
 
-                        "Y si no puedes llegar a un acuerdo, entonces puedes presentar la moratoria de desalojos de los CDC, que te protege contra el desalojo hasta al menos el 31 de marzo de este año. Mientras tanto, deberías solicitar ayuda financiera que puedan ayudarte a conseguir el dinero restante".<br/><br/>
+                        "Y si no puedes llegar a un acuerdo, entonces puedes  
+
+                        presentar  <button
+                            type="button"
+                            ref={ref => this.CDCRef = ref} 
+                            data-tip={`
+                            <span style="color:#E7BE48">La moratoria de desalojos de los CDC</span> impide que los caseros desalojen a residentes por no pagar alquiler hasta el 31 de marzo de 2021.
+                            `}
+                            data-multiline={true}
+                            //data-offset="{'top': 10}"
+                            data-border={true}
+                            data-border-color={"#999999"}
+                            backgroundColor={"1E1E1E"}
+                            arrowColor={"#999999"}
+                            place="top"
+                            className={EvictionStoryStyles.toolTipDefine}
+                            onClick={() => { ReactTooltip.show(this.CDCRef) }}
+                        >
+                        la moratoria
+                        </button>  de 
+
+                         desalojos de los CDC, que te protege contra el desalojo hasta al menos el 31 de marzo de este año. Mientras tanto, deberías solicitar ayuda financiera que puedan ayudarte a conseguir el dinero restante".<br/><br/>
 
                         María le agradece su tiempo y decide ir por su cuenta, acordando visitar la oficina de arrendamiento al día siguiente.<br/><br/>
                         </article>
