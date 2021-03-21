@@ -48,7 +48,7 @@ export default class EvictionStory extends React.Component {
 
                             Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
 
-                                  <p 
+                                <p 
                                     ref={ref => this.fooRef = ref} 
                                     data-tip='Un <span style="color:#E7BE48"> aviso de desalojo </span>es cualquier comunicación escrita o verbal de su proprietario que le exige cumplir o desocupar su casa. El manager debe dar este paso antes de solicitar el desalojo en la corte. Debería especificar cuánto tiempo tienes que cumplir (e.g. 5 días) antes tomar accíon.' 
                                     data-multiline={true}
@@ -56,7 +56,8 @@ export default class EvictionStory extends React.Component {
                                     data-border={true}
                                     data-border-color={"#999999"}
                                     backgroundColor={"1E1E1E"}
-                                    >
+                                    arrowColor={"#999999"}
+                                >
                                     </p>
                                     Es un <button
                                     type="button"
@@ -64,7 +65,7 @@ export default class EvictionStory extends React.Component {
                                     onClick={() => { ReactTooltip.show(this.fooRef) }}
                                 >
                                 aviso de desalojo
-                                </button><ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>  en
+                                </button>  en
 
                              el que se le informa de que no ha pagado la renta de este mes. El aviso dice que si no paga el saldo restante en 5 días, el edificio emprenderá acciones legales contra ella.<br/><br/>
 
@@ -77,6 +78,7 @@ export default class EvictionStory extends React.Component {
                         </div>
                         <div className={EvictionStoryStyles.bottomGradient}></div>
                     </div>
+                    <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>
                 </section>   
                 )}
             </InView> 
