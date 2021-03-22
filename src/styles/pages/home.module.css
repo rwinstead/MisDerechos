@@ -7,7 +7,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 450px;
+    max-height: 80vh;
+    min-height: 50vh;
     background-color: #2A3667;
     background-blend-mode: multiply;
     background-image: url("../../assets/images/home_hero.png");
@@ -17,14 +18,14 @@
 }
 
 .heroText{
-    margin-top: 2rem;
+    margin-top: 4rem;
     vertical-align: middle;
     margin-bottom: 1.5rem;
 }
 
 .heroDescription {
     color: white;
-    padding: 0 3rem 4rem;
+    padding: 0 3rem 2rem;
     text-align: center;
 }
 
@@ -32,33 +33,48 @@
     margin-bottom: 1rem;
 }
 
-.optionContainer { 
+.aboutThisContainer { 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 320px;
+    height: auto;
     width: 100%;
+    background-color: #5D70BA;
 }
 
-.optionContent {
+.aboutThisContent {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
-.sectionHeader {
+.aboutThisHeader {
     font-weight: bold;
-    font-size: 30px;
-    margin: 0px 10px 0px 10px;
+    font-size: 22px;
+    margin: 20px 10px 0px 10px;
+    padding: 20px;
+    display: inline-block;
 }
 
-.sectionBody {
-    padding: 20px;
+.aboutThisBody {
+    padding: 20px 20px 0px 20px;
     margin: 0px;
+}
+
+.aboutThisYellow {
+    font-size: 20px;
+    color: #F0DB9A;
+    padding: 20px 20px 0px 20px;
+}
+
+.aboutThisAffiliation {
+    font-size: 12px;
+    color: #cecece;
+    padding: 20px 20px 20px 25px;
 }
 
 .ctaButton {
     border: none;
-    padding: 10px;
+    padding: 10px 10px 25px 10px;
     height: 41px;
     width: 167px;
     text-align: center;
@@ -68,4 +84,6 @@
     cursor: pointer;
     border-radius: 20.5px;
     margin-top: 10px;
+    margin-bottom: 5rem;
+    font-weight: bold;
 }
