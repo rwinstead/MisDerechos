@@ -31,7 +31,7 @@ export default class EvictionStory extends React.Component {
         return (
         <main>
             <StoryBack
-                link = {'/'} //TODO add link to overview page when complete
+                link = {'/story-eviction-overview/'} 
             /> 
             <SideNav visibility={this.state} />
             <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>

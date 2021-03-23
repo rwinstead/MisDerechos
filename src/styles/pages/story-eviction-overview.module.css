@@ -1,0 +1,197 @@
+.heroContainer {
+    background-image: url("../../assets//images/eviction-story-overview/heroImage.png");
+    height:280px;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: white;
+}
+
+#heroText, #readingTime, #storyDescription {
+    padding: 0px 0px 10px 10px;
+    height:auto;
+    width:80%;
+}
+
+#heroText {
+    font-size: 23px;
+    font-weight: bolder;
+    line-height: 1.3;
+}
+
+#readingTime {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+#readingTime img {
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+#storyDescription {
+    width: 70%;
+    font-size: 14px;
+    padding-bottom: 18px;
+}
+
+#startArrow {
+    width: 70px;
+    height: 70px;
+    background: #E7BE48;
+    border-radius: 50%;
+    position: absolute;
+    right:10px;
+    top:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);   
+}
+
+#startArrow img {
+    width: 45px;
+    
+}
+
+#resourcesContainer {
+    background-color: white;
+    height: 185px;
+    width: 100%;
+}
+
+.resourceItemContainer {
+    padding-bottom: 7px;
+}
+
+#resourcesHeader {
+    color: #37488C;
+    font-size: 19px;
+    padding: 30px 0px 10px 15px;
+}
+
+.resourceItem {
+    color: #5D6894;
+    text-decoration-line: underline;
+    font-size: 15px;
+    padding: 0px 0px 5px 35px;
+}
+
+.resourceDescription {
+    color: #9EA1AC;
+    font-size: 13px;
+    padding-left: 10px;
+    font-weight: 300 lighter;
+}
+
+.bullet {
+    width: 5px;
+    height: 5px;
+    background: #3871F8;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 2.5px;
+    margin-right: 6px;
+}
+
+#stepsContainer {
+    height: auto;
+    width:100%;
+    background-color: #F8F8F8;
+}
+
+#stepHeader {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#stepHeader span {
+    color: #37488C;
+    font-weight: bold;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 0px 0px 0px 15px;
+    margin-top: 0px;
+}
+
+#stepHeader p {
+    color: #777777;
+    font-size: 14px;
+    padding: 5px 20px 0px 15px;
+    margin: 0px;
+    font-weight: 300;
+}
+
+.stepBox {
+    height: 140px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.stepItem {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepThumbnail {
+    width: 30%;
+    height: 100%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepThumbnail img {
+    height: 100px;
+    filter: drop-shadow(2px 2px 4px rgba(104, 89, 143, 0.5));
+    border-radius: 3px;
+}
+
+.stepNumberContainer {
+    height: 100%;
+    width: 15%;
+    margin-left: 10px;
+}
+
+.stepNumber {
+    width: 30px;
+    height: 30px;
+    background: #D9E0FC;
+    border-radius: 50%;
+    display: flex;
+    margin-bottom: 2.5px;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+    color: #37488C;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 20px 10px 0px 10px;
+}
+
+.stepTextContainer {
+    width: 60%;
+    height: 100%;
+}
+
+.stepTextContainer p {
+    color: #37488C;
+    width: 90%;
+    font-size: 17px;
+    padding-left: 5px;
+}
