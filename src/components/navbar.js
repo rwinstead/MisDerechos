@@ -54,7 +54,7 @@ export default class Navbar extends React.Component {
                       to="/Recursos/"
                       id={navbarStyles.item}
                       >
-                      Todos los Recursos
+                      Todos los recursos
                   </Link>
                  </div>
 

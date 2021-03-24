@@ -73,7 +73,7 @@ export default function StoryOverview() {
                 <section id={evictionOverviewStyles.stepsContainer}>
                     <div id={evictionOverviewStyles.stepHeader}>
                         <span>Los pasos en esta historia</span>
-                        <p>Pinche en un paso para navegar a esa parte de la historia.</p>
+                        <p>Pinche en una imagen para navegar a esa parte de la historia.</p>
                     </div>
 
                     <div className={evictionOverviewStyles.stepBox}>
