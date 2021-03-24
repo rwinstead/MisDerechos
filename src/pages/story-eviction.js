@@ -8,6 +8,8 @@ import ReactTooltip from 'react-tooltip'
 import telephoneIcon from "../assets/icons/telephone.svg"
 import clockIcon from "../assets/icons/clock.svg"
 import internetIcon from "../assets/icons/internet.svg"
+import downArrow from "../assets/icons/downArrow.svg"
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
 
 export default class EvictionStory extends React.Component {
 
@@ -73,6 +75,22 @@ export default class EvictionStory extends React.Component {
                             Al principio, María se asusta al leer la carta. Le preocupa que su familia se vea obligada a abandonar su casa.<br/><br/>
 
                             Pero María tiene derechos, y existen medidas que puede tomar para protegerse.<br/><br/>
+                            <ScrollLink
+                                activeClass="active"
+                                to="step1"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
+
                             </article>
                         </div>
                         <div className={EvictionStoryStyles.bottomGradient}></div>
@@ -112,6 +130,7 @@ export default class EvictionStory extends React.Component {
 
                                     `}
                                     data-multiline={true}
+                                    place="top"
                                     //data-offset="{'top': 10}"
                                     data-border={true}
                                     // data-place={"right"}
@@ -147,6 +166,21 @@ export default class EvictionStory extends React.Component {
                         Después de la llamada, María intenta encontrar el contrato de alquiler que firmó cuando se mudó a su apartamento.<br/><br/>
 
                         Por suerte, tiene una copia impresa que guarda en una caja debajo de la cama. Si no la tuviera, siempre puede pedir una copia a la oficina de alquiler.<br/><br/>
+                        <ScrollLink
+                                activeClass="active"
+                                to="step2"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
                         </article>
                     </div>
                     <div className={EvictionStoryStyles.bottomGradient}></div>
@@ -187,6 +221,7 @@ export default class EvictionStory extends React.Component {
 
                                     `}
                                     data-multiline={true}
+                                    place="top"
                                     //data-offset="{'top': 10}"
                                     data-border={true}
                                     // data-place={"right"}
@@ -231,6 +266,21 @@ export default class EvictionStory extends React.Component {
                          desalojos de los CDC, que te protege contra el desalojo hasta al menos el 31 de marzo de este año. Mientras tanto, deberías solicitar ayuda financiera que puedan ayudarte a conseguir el dinero restante".<br/><br/>
 
                         María le agradece su tiempo y decide ir por su cuenta, acordando visitar la oficina de arrendamiento al día siguiente.<br/><br/>
+                        <ScrollLink
+                                activeClass="active"
+                                to="step3"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
                         </article>
                     </div>
                     <div className={EvictionStoryStyles.bottomGradient}></div>
@@ -275,6 +325,21 @@ export default class EvictionStory extends React.Component {
                         Si María no tuviera una dirección de correo electrónico, también puede pedirle a Rosalinda que le ayude a enviar uno.<br/><br/>
 
                         Documentar lo sucedido es muy importante y podría ayudar a María en el futuro si hay alguna disputa sobre lo sucedido.<br/><br/>
+                        <ScrollLink
+                                activeClass="active"
+                                to="step4"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
                         </InView>
                         </article>
                     </div>
@@ -309,6 +374,21 @@ export default class EvictionStory extends React.Component {
                         Tras recibirlo, utiliza el correo electrónico que le dió el agente de su oficina de arrendamiento  envía el formulario firmado. En el se explica que está protegida contra el desalojo gracias a la moratoria, pero que seguirá trabajando con el edificio para pagar su renta cuando pueda.<br/><br/>
 
                         Si María no pudiera enviarlo por correo electrónico, también podría volver a la oficina de arrendamiento y mostrarles la carta en su teléfono, o imprimirla y entregarla.<br/><br/>
+                        <ScrollLink
+                                activeClass="active"
+                                to="step5"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
 
                         </article>
                     </div>
@@ -340,6 +420,21 @@ export default class EvictionStory extends React.Component {
                         Para cada formulario que presenta, María toca una foto de su solicitud para documentar su trabajo.<br/><br/>
 
                         Cuando termina, María respira hondo y espera sus respuestas.<br/><br/>
+                        <ScrollLink
+                                activeClass="active"
+                                to="step6"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                            >
+                                <div id={EvictionStoryStyles.arrowContainer}>
+                                    <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
+                                </div>
+                            </ScrollLink>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
 
                         </article>
                     </div>

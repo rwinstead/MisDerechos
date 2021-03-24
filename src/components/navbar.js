@@ -1,9 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import * as navbarStyles from "./navbar.module.css"
 import hamburger from "../assets/icons/hamburger.svg"
 import logo from "../assets/icons/logo.svg"
 import closeIcon from "../assets/icons/close.svg"
+import { Link } from "gatsby"
 
 export default class Navbar extends React.Component {
 
