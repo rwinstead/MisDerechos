@@ -9,7 +9,11 @@ import telephoneIcon from "../assets/icons/telephone.svg"
 import clockIcon from "../assets/icons/clock.svg"
 import internetIcon from "../assets/icons/internet.svg"
 import downArrow from "../assets/icons/downArrow.svg"
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
+import { Link as ScrollLink, scroller} from "react-scroll"
+
+let amScrolling = false; //This is only needed if there's a conflict between the scroll adjuster and the the smooth scrolling buttons
+let userScrolling = false;
+let beingHandled = false;
 
 export default class EvictionStory extends React.Component {
 
@@ -26,18 +30,95 @@ export default class EvictionStory extends React.Component {
             step6Visible: false,
             step6aVisible: false,
         };
+        this.adjustSCroll = this.adjustSCroll.bind(this);
     }
+
+    // Could be used to stop conflicts between react-scroll and the spacers that check for scrolling
+    //setScrolling(){
+    //     amScrolling = true;
+    //     console.log(amScrolling);
+    //     const timer = setTimeout(() => {
+    //         amScrolling = false;
+    //         console.log(amScrolling);
+    //       }, 1000);     
+    // }
+
+    adjustSCroll(inView){
+        if(!beingHandled){
+            
+    if(inView && !amScrolling){
+        beingHandled = true;
+        let time = 0;
+        const interval = setInterval(() => {
+            console.log("tick tock");
+            time += 1;
+            if(time>16){
+                clearInterval(interval);
+                beingHandled = false;
+            }
+            if(!userScrolling) {
+                clearInterval(interval);
+                if(this.state.step0Visible)
+                    {
+                    scroller.scrollTo("step0",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step1Visible)
+                    {
+                    scroller.scrollTo("step1",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step2Visible)
+                    {
+                    scroller.scrollTo("step2",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step3Visible)
+                    {
+                    scroller.scrollTo("step3",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step4Visible)
+                    {
+                    scroller.scrollTo("step4",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step5Visible)
+                    {
+                    scroller.scrollTo("step5",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    if(this.state.step6Visible)
+                    {
+                    scroller.scrollTo("step6",{
+                        smooth: true,
+                        duration: 350});
+                    }
+                    beingHandled = false;
+                }
+          }, 250);
+        }
+
+    }
+}
 
     render() {
 
         return (
-        <main>
+        <main id={EvictionStoryStyles.rootContainer}>
             <StoryBack
                 link = {'/story-eviction-overview/'} 
             /> 
             <SideNav visibility={this.state} />
             <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -82,7 +163,7 @@ export default class EvictionStory extends React.Component {
                                 smooth={true}
                                 duration={500}
                             >
-                                <div id={EvictionStoryStyles.arrowContainer}>
+                                <div id={EvictionStoryStyles.arrowContainer} >
                                     <img id={EvictionStoryStyles.nextSectionArrow} src={downArrow} alt="Arrow to proceed to next section"/>
                                 </div>
                             </ScrollLink>
@@ -100,7 +181,11 @@ export default class EvictionStory extends React.Component {
                 )}
             </InView> 
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step1Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step1Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -189,7 +274,11 @@ export default class EvictionStory extends React.Component {
             )}
             </InView> 
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step2Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step2Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -289,7 +378,11 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step3Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step3Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -349,7 +442,11 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step4Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step4Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -398,7 +495,11 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step5Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step5Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -444,7 +545,11 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView threshold={.53} onChange={(inView, entry) => this.setState({step6Visible : inView})}>
+            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <div className={EvictionStoryStyles.spacer}/>
+            </InView>
+
+            <InView threshold={.501} onChange={(inView, entry) => this.setState({step6Visible : inView})}>
             {({ inView, ref, entry }) => (
                 <section 
                     ref={ref}
@@ -488,4 +593,37 @@ export default class EvictionStory extends React.Component {
         );
     }
 }
+
+var scrollStop = function (callback) {
+    if (typeof window !== `undefined`) {
+    
+   // Make sure a valid callback was provided
+   if (!callback || typeof callback !== 'function') return;
+
+   // Setup scrolling variable
+   var isScrolling;
+
+   // Listen for scroll events
+   window.addEventListener('scroll', function (event) {
+
+       // Clear our timeout throughout the scroll
+       window.clearTimeout(isScrolling);
+       userScrolling = true;
+
+       // Set a timeout to run after scrolling ends
+       isScrolling = setTimeout(function() {
+
+           // Run the callback
+           callback();
+
+       }, 66);
+
+   }, false);
+}
+
+};
+
+scrollStop(function () {
+   userScrolling = false;
+});
 
