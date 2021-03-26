@@ -92,7 +92,7 @@ export default function Resources() {
                 phoneContact = ""
                 phoneLink = "404-521-0790"
                 hours = "lunes a jueves de 9am a 1pm"
-                URL = "avlf.org/issues/evicitions"
+                URL = "avlf.org/issues/evictions"
                 speaksSpanish = "Se habla español"
                 description = "Le brindarán asesoramiento legal y pueden tener un abogado voluntario para que lo represente. Manejan casos en los que el inquilino tiene una disputa con un propietario privado."
                 howToReach = "Llámelos durante su horario de atención y pida hablar con un abogado que hable español."
