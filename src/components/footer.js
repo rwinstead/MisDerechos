@@ -9,7 +9,7 @@ export default function Footer (){
         <div className={footerStyles.footerContainer}>
             <nav>
                 <Link
-                to="/Recursos/"
+                to="/resources/"
                 >
                 Todos los Recursos
                 </Link>

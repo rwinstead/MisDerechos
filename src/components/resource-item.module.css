@@ -1,8 +1,20 @@
-#highlighted {
+.highlighted {
     background-color: #FFFCF4;
+    padding-bottom: 10px;
+}
+
+.nonHighlighted {
+    padding-bottom: 10px;
 }
 
 .title {
+    color: #37488C;
+    font-size:22px;
+    font-weight: 700;  
+    padding: 20px 0px 15px 10px;
+}
+
+.highlightedTitle {
     color: #474747;
     font-size: 26px;
     font-weight: 700;  
@@ -119,4 +131,25 @@
 
 #starContainer div img {
     width: 20px;
+}
+
+/* ------------- CATEGORY STYLES ------------- */
+
+.categoryContainer {
+    margin-bottom: 0px;
+}
+
+.categoryTitle {
+    color: #ffffff;
+    background-color: #37488C;
+    font-size: 22px;
+    font-weight: 700;  
+    margin: 50px 0px 10px 0px;
+    padding: 5px 15px 5px 10px;
+}
+
+.categoryDescription {
+    padding: 0px 15px 20px 10px;
+    font-size: 14px;
+    color: #6b6b6b;
 }

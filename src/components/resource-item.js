@@ -10,10 +10,10 @@ import internetIcon from "../assets/icons/internet_black.svg"
 import starIcon from "../assets/icons/star.svg"
 
 
-export default function(props) {
+export function ResourceItem(props) {
     return(
-        <main id={props.highlighted ? ResourceItemStyles.highlighted : null}>
-            <div className={ResourceItemStyles.title}> {props.title}</div>
+        <main id={props.title} className={props.highlighted ? ResourceItemStyles.highlighted : ResourceItemStyles.nonHighlighted}>
+            <div className={props.highlighted ? ResourceItemStyles.highlightedTitle : ResourceItemStyles.title}> {props.title}</div>
             <section className={ResourceItemStyles.contactBlock}>
                 <div className={ResourceItemStyles.contactRow}>
                     <img id={ResourceItemStyles.phone} src={telephoneIcon} alt="telephone icon"/>
@@ -68,4 +68,15 @@ export default function(props) {
         </main>
     )
 
+}
+
+export function CategoryItem(props) {
+    return (
+        <main id={props.title} className={ResourceItemStyles.categoryContainer}>
+             <div className={ResourceItemStyles.categoryTitle}> {props.title}</div>
+             <div className={ResourceItemStyles.categoryDescription}>
+                 {props.description}
+             </div>
+        </main>
+    )
 }
