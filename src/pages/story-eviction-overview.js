@@ -85,7 +85,9 @@ export default function StoryOverview() {
                                 <p>María se pone en contacto con abogados gratis a  AVLF.</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img src={thumbnail1} alt="Step 1 thumbnail"/>
+                                <Link to="/story-eviction/#step1">
+                                    <img src={thumbnail1} alt="Step 1 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -100,7 +102,9 @@ export default function StoryOverview() {
                                 <p>María encuentra su contracto de alquiler y comprenda las condiciónes.</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img  src={thumbnail2} alt="Step 2 thumbnail"/>
+                                <Link to="/story-eviction/#step2">
+                                    <img  src={thumbnail2} alt="Step 2 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -114,7 +118,9 @@ export default function StoryOverview() {
                                 <p>María explica su situación a la oficina de arrendamiento de su apartamento.</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img  src={thumbnail3} alt="Step 3 thumbnail"/>
+                                <Link to="/story-eviction/#step3">
+                                    <img  src={thumbnail3} alt="Step 3 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -128,7 +134,9 @@ export default function StoryOverview() {
                                 <p>María presenta la moratoria de desalojos de los CDC.</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img  src={thumbnail4} alt="Step 4 thumbnail"/>
+                                <Link to="/story-eviction/#step4">
+                                    <img  src={thumbnail4} alt="Step 4 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -142,7 +150,9 @@ export default function StoryOverview() {
                                 <p>María solicita la ayuda a la vivienda</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img  src={thumbnail5} alt="Step 5 thumbnail"/>
+                                <Link to="/story-eviction/#step5">
+                                    <img  src={thumbnail5} alt="Step 5 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -156,18 +166,14 @@ export default function StoryOverview() {
                                 <p>María hace un plan para pagar su renta.</p>
                             </div>
                             <div className={evictionOverviewStyles.stepThumbnail}>
-                                <img  src={thumbnail6} alt="Step 6 thumbnail"/>
+                                <Link to="/story-eviction/#step6">
+                                    <img  src={thumbnail6} alt="Step 6 thumbnail"/>
+                                </Link>
                             </div>
                         </div>
                     </div>
 
                 </section>
-
-
-
-
-
-
 
             <Footer/>
         </main>
