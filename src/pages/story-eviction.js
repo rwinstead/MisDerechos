@@ -10,6 +10,7 @@ import clockIcon from "../assets/icons/clock.svg"
 import internetIcon from "../assets/icons/internet.svg"
 import downArrow from "../assets/icons/downArrow.svg"
 import { Link as ScrollLink, scroller} from "react-scroll"
+import { Link } from "gatsby"
 
 let amScrolling = false; //This is only needed if there's a conflict between the scroll adjuster and the the smooth scrolling buttons
 let userScrolling = false;
@@ -19,18 +20,24 @@ export default class EvictionStory extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.step3Ref = React.createRef();
+        this.step6Ref = React.createRef();
+
         this.state = {
             step0Visible: false,
             step1Visible: false,
             step2Visible: false,
             step3Visible: false,
-            step3aVisible: false,
             step4Visible: false,
             step5Visible: false,
             step6Visible: false,
-            step6aVisible: false,
+            step3ScrollTop: 0,
+            step6ScrollTop: 0,
         };
         this.adjustSCroll = this.adjustSCroll.bind(this);
+        this.step3HandleScroll = this.step3HandleScroll.bind(this);
+        this.step6HandleScroll = this.step6HandleScroll.bind(this);
     }
 
     // Could be used to stop conflicts between react-scroll and the spacers that check for scrolling
@@ -108,6 +115,28 @@ export default class EvictionStory extends React.Component {
     }
 }
 
+step3HandleScroll(){
+    if (typeof window !== `undefined`)
+    {
+        const scrollTop = this.step3Ref.current.scrollTop
+        //console.log(`onScroll3, myRef.scrollTop: ${scrollTop}`)
+        this.setState({
+          step3ScrollTop: scrollTop
+        })
+    }
+}
+
+step6HandleScroll(){
+    if (typeof window !== `undefined`)
+    {
+        const scrollTop = this.step6Ref.current.scrollTop
+        //console.log(`onScroll6, myRef.scrollTop: ${scrollTop}`)
+        this.setState({
+          step6ScrollTop: scrollTop
+        })
+    }
+}
+
     render() {
 
         return (
@@ -125,26 +154,26 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step0"
                 >
-                    <div onClick={() => { ReactTooltip.hide(this.fooRef) }} className={EvictionStoryStyles.stickyItems}>
+                    <div className={EvictionStoryStyles.stickyItems}>
                         <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image1}></div>
                         <div className={EvictionStoryStyles.topGradient}></div>
                         <p className={EvictionStoryStyles.stepHeader}>{`Prólogo: Maria encuentra un aviso en su puerta`}</p>
                         <div className={EvictionStoryStyles.storyContainer}>
-                            <article className={EvictionStoryStyles.storyText}>
+                            <article onScroll={ () => ReactTooltip.hide(this.avisoRef) } className={EvictionStoryStyles.storyText}>
                             <p></p>
 
                             Son las seis y media de la tarde cuando María llega a casa y encuentra un papel pegado en la puerta.<br/><br/>
 
                                     Es un <button
                                     type="button"
-                                    ref={ref => this.fooRef = ref} 
+                                    ref={ref => this.avisoRef = ref} 
                                     data-tip='Un <span style="color:#E7BE48"> aviso de desalojo </span>es cualquier comunicación escrita o verbal de su proprietario que le exige cumplir o desocupar su casa. El manager debe dar este paso antes de solicitar el desalojo en la corte. Debería especificar cuánto tiempo tienes que cumplir (p.e. 5 días) antes tomar accíon.' 
                                     data-multiline={true}
                                     //data-offset="{'top': 10}"
                                     data-border={true}
                                     place="top"
                                     className={EvictionStoryStyles.toolTipDefine}
-                                    onClick={() => { ReactTooltip.show(this.fooRef) }}
+                                    onClick={() => { ReactTooltip.show(this.avisoRef) }}
                                 >
                                 aviso de desalojo
                                 </button>  en
@@ -192,12 +221,20 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step1"
                 >
-                <div onClick={() => { ReactTooltip.hide(this.avlfRef) }} className={EvictionStoryStyles.stickyItems}>
+                <div className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image2}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 1: Se pone en contacto con abogados gratis a AVLF.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
-                        <article className={EvictionStoryStyles.storyText}>
+                        <article 
+                            className={EvictionStoryStyles.storyText}
+                            onScroll={() =>
+                                {
+                                    ReactTooltip.hide(this.avlfRef);
+                                    ReactTooltip.hide(this.contratoRef)
+                                }
+                            }
+                        >
                         <p></p>
                         María empieza por llamar a La Fundación de Abogados Voluntarios de 
 
@@ -285,12 +322,20 @@ export default class EvictionStory extends React.Component {
                     className={EvictionStoryStyles.stepContent}
                     id="step2"
                 >
-                <div onClick={() => { ReactTooltip.hide(this.waRef) }} className={EvictionStoryStyles.stickyItems}>
+                <div className={EvictionStoryStyles.stickyItems}>
                     <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image3}></div>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 2: Encuentra su contracto de alquiler y comprenda las estipulaciónes.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
-                        <article className={EvictionStoryStyles.storyText}>
+                        <article 
+                            className={EvictionStoryStyles.storyText}
+                            onScroll={() => 
+                                {
+                                    ReactTooltip.hide(this.waRef);
+                                    ReactTooltip.hide(this.CDCRef);
+                                }
+                            }
+                        >
                         <p></p>
                         María revisa el contrato de alquiler pero se siente abrumada. Es más largo de lo que recuerda y hay muchas palabras difíciles de entender.<br/><br/>
 
@@ -390,19 +435,20 @@ export default class EvictionStory extends React.Component {
                     id="step3"
                 >
                 <div className={EvictionStoryStyles.stickyItems}>
-                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step3aVisible ? EvictionStoryStyles.image4a : EvictionStoryStyles.image4}></div>
+                    <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image4a}/>
+                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step3ScrollTop < 700 ? EvictionStoryStyles.image4 : EvictionStoryStyles.image4Fade}/>
                     <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 3: Explica su situación a la oficina de arrendamiento de su apartamento.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
-                        <article className={EvictionStoryStyles.storyText}>
+                        <article ref={this.step3Ref} onScroll={this.step3HandleScroll} className={EvictionStoryStyles.storyText}>
                         <p></p>
+
                         Han pasado dos días desde que María recibió un aviso de desalojo.<br/><br/>
 
                         Esa mañana, María recoge su contrato de alquiler y el aviso de desalojo y se dirige a la oficina de arrendamiento de su apartamento.<br/><br/>
 
                         Al llegar, María le muestra al representante de la oficina de arrendamiento un aviso de desalojo y le explica que no puede pagar la renta porque COVID-19 ha cerrado el negocio en el que trabajaba.<br/><br/>
-                        
-                        <InView as="div" threshold={.2} onChange={(inView, entry) => this.setState({step3aVisible : inView})}>
+
                         Puedo hacer pagos parciales de la renta hasta que encuentre otro trabajo. También voy a solicitar programas de ayuda a la renta para obtener más ayuda. Espero que puedan entender mi situación", dice María.
                         
                         <br/><br/>
@@ -433,7 +479,6 @@ export default class EvictionStory extends React.Component {
                             <br/><br/>
                             <br/><br/>
                             <br/>
-                        </InView>
                         </article>
                     </div>
                     <div className={EvictionStoryStyles.bottomGradient}></div>
@@ -557,30 +602,40 @@ export default class EvictionStory extends React.Component {
                     id="step6"
                 >
                 <div className={EvictionStoryStyles.stickyItems}>
-                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step6aVisible ? EvictionStoryStyles.image7a : EvictionStoryStyles.image7}></div>
-                    <div className={EvictionStoryStyles.topGradient}></div>
+                    <div className={EvictionStoryStyles.backgroundImage} id={EvictionStoryStyles.image7a}/>
+                    <div className={EvictionStoryStyles.backgroundImage} id={this.state.step6ScrollTop < 1380 ? EvictionStoryStyles.image7 : EvictionStoryStyles.image7Fade}/>                    <div className={EvictionStoryStyles.topGradient}></div>
                     <p className={EvictionStoryStyles.stepHeader}>Paso 6: Hace un plan para pagar su renta.</p>
                     <div className={EvictionStoryStyles.storyContainer}>
-                        <article className={EvictionStoryStyles.storyText}>
-                        <p></p>
+                        <article ref={this.step6Ref} onScroll={this.step6HandleScroll} className={EvictionStoryStyles.storyText}>
+                            <p></p>
 
-                        María siente que se ha quitado un enorme peso de encima. Su familia podrá permanecer en su casa, pero ahora tiene que hacer un plan para pagar toda la renta que debe antes de que finalice la moratoria de los CDC (31 de marzo de 2021).<br/><br/>
+                            María siente que se ha quitado un enorme peso de encima. Su familia podrá permanecer en su casa, pero ahora tiene que hacer un plan para pagar toda la renta que debe antes de que finalice la moratoria de los CDC (31 de marzo de 2021).<br/><br/>
 
-                        María se toma un tiempo para idear una forma de volver a ponerse en pie.<br/><br/>
+                            María se toma un tiempo para idear una forma de volver a ponerse en pie.<br/><br/>
 
-                        En primer lugar, seguirá pagando lo que pueda para la renta mensual. Así evitará acumular una gran deuda y reducirá el importe de las cuotas de retraso que debe pagar al edificio.<br/><br/>
+                            En primer lugar, seguirá pagando lo que pueda para la renta mensual. Así evitará acumular una gran deuda y reducirá el importe de las cuotas de retraso que debe pagar al edificio.<br/><br/>
 
-                        A continuación, se pone a buscar un trabajo nuevo que pueda reemplazar sus ingresos perdidos. Vuelve a hablar con Welcoming Atlanta para ver qué oportunidades existen en su barrio.<br/><br/>
+                            A continuación, se pone a buscar un trabajo nuevo que pueda reemplazar sus ingresos perdidos. Vuelve a hablar con Welcoming Atlanta para ver qué oportunidades existen en su barrio.<br/><br/>
 
-                        Por último, María continúa con el seguimiento de sus solicitudes de ayuda a la renta, hablando de nuevo con ellos para comprobar el estado de su solicitud y asegurarse de que han procesado sus documentos correctamente.<br/><br/>
-                        
-                        <InView as="div" threshold={.2} onChange={(inView, entry) => this.setState({step6aVisible : inView})}>
+                            Por último, María continúa con el seguimiento de sus solicitudes de ayuda a la renta, hablando de nuevo con ellos para comprobar el estado de su solicitud y asegurarse de que han procesado sus documentos correctamente.<br/><br/>
 
-                        En los últimos días, María se ha sentido preocupada y un poco abrumada, pero también ha tomado todas las medidas posibles para protegerse a sí misma y a su familia de ser desalojada durante el COVID.<br/><br/>
+                            En los últimos días, María se ha sentido preocupada y un poco abrumada, pero también ha tomado todas las medidas posibles para protegerse a sí misma y a su familia de ser desalojada durante el COVID.<br/><br/>
 
-                        La lucha de María no ha terminado. Pero sabe que en su casa tiene derechos que nadie puede quitarle.<br/><br/>
+                            La lucha de María no ha terminado. Pero sabe que en su casa tiene derechos que nadie puede quitarle.<br/><br/>
+                            <div id={EvictionStoryStyles.endButtonContainer}>
+                                <Link
+                                    to="/story-eviction-overview/"
+                                    id={EvictionStoryStyles.endButton}
+                                >
+                                    Terminar
+                                </Link>
+                            </div>
 
-                        </InView>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/><br/>
+                            <br/>
+
                         </article>
                     </div>
                     <div className={EvictionStoryStyles.bottomGradient}></div>

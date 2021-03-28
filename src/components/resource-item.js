@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import "@fontsource/open-sans"
 import "@fontsource/open-sans/700.css"
 
@@ -22,13 +21,13 @@ export function ResourceItem(props) {
                 </div>
 
                 <div className={ResourceItemStyles.contactRow}>
-                    <img id={ResourceItemStyles.clock} src={clockIcon} alt="telephone icon"/>
+                    <img id={ResourceItemStyles.clock} src={clockIcon} alt="clock icon"/>
                     <p>{props.hours}</p>
                 </div>
 
                 <div className={ResourceItemStyles.contactRow}>
-                    <img id={ResourceItemStyles.internet} src={internetIcon} alt="telephone icon"/>
-                    <a id={ResourceItemStyles.URL} href={`http://` + props.URL} target="_blank">{props.URL}</a>
+                    <img id={ResourceItemStyles.internet} src={internetIcon} alt="internet icon"/>
+                    <a id={ResourceItemStyles.URL} href={`http://` + props.URL} target="_blank" rel="noreferrer">{props.URL}</a>
                 </div>
             </section>
             
@@ -53,7 +52,7 @@ export function ResourceItem(props) {
                 <div id={ResourceItemStyles.noteContent}>
                     <div id={ResourceItemStyles.starContainer}>
                         <div>
-                            <img src={starIcon}></img>
+                            <img src={starIcon} alt="star icon indicating an important note"></img>
                         </div>
                     </div>
                     <div id={ResourceItemStyles.noteText}>

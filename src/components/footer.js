@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import * as footerStyles from "./footer.module.css"
-import watlLogo from "../assets/icons/watlLogo.svg"
 import logoColor from "../assets/images/WatlColor.png"
 
 export default function Footer (){

@@ -29,7 +29,7 @@ export default class Navbar extends React.Component {
     return (
       <main>
         <div className={navbarStyles.container}>
-          <div className={navbarStyles.menuButton} onClick={this.showMenu}>
+          <div className={navbarStyles.menuButton} role="button" tabIndex={0} onClick={this.showMenu} onKeyDown={this.showMenu}>
             <span className={navbarStyles.menuText}>Menú</span> 
             {   
               this.state.showMenu ?
