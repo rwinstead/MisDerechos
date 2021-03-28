@@ -19,6 +19,10 @@
     padding-right: 2px;
   }
 
+  .menuButton:focus {
+    outline: none;
+  }
+
   .menuText {
     float: left;
     color: white;
@@ -59,6 +63,7 @@
       align-items: flex-start;
       flex-direction: column;
       z-index: 999;
+      box-shadow: -2px 2px 3px #1111112c;
   }
 
 
