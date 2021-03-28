@@ -111,7 +111,7 @@ export default class EvictionStory extends React.Component {
     render() {
 
         return (
-        <main id={EvictionStoryStyles.rootContainer}>
+        <main>
             <StoryBack
                 link = {'/story-eviction-overview/'} 
             /> 
@@ -181,7 +181,7 @@ export default class EvictionStory extends React.Component {
                 )}
             </InView> 
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
@@ -274,7 +274,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView> 
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
@@ -378,7 +378,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
@@ -442,7 +442,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
@@ -495,7 +495,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
@@ -545,7 +545,7 @@ export default class EvictionStory extends React.Component {
             )}
             </InView>
 
-            <InView trackVisibility={true} threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
+            <InView threshold={1} onChange={(inView, entry) => this.adjustSCroll(inView)}>
             <div className={EvictionStoryStyles.spacer}/>
             </InView>
 
