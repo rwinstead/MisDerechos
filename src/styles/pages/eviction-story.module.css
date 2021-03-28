@@ -164,7 +164,17 @@ body {
     font-size: 20px;
     line-height: 1.6;
     font-weight: bold;
+    animation: tapScale 1.2s ease-in-out infinite alternate;
 
+}
+
+@keyframes tapScale {
+    0% {
+        background-size: 27px 27px;
+    }
+    100% {
+        background-size: 32px 32px;
+    }
 }
 
 .toolTipResource {
@@ -179,6 +189,7 @@ body {
     font-size: 20px;
     line-height: 1.6;
     font-weight: bold;
+    animation: tapScale 1.2s ease-in-out infinite alternate;
 }
 
 .toolTipContent  {
