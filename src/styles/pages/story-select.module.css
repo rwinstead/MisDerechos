@@ -1,0 +1,86 @@
+.pageContainer {
+    background-color: #EBEDF3;
+    height: 100%;
+    width: 100%;
+}
+
+#headerText {
+    color: #37488C;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: normal;
+    padding: 40px 0px 40px 12px;
+}
+
+.storyBox {
+    background-color: white;
+    border-radius: 5px;
+    height:100%;
+    width: auto;
+    margin: 0px 15px 0px 15px;
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.11);
+    overflow: hidden;
+}
+
+#storyImage {
+    padding: 0px;
+    margin: 0px;
+    height: 210px;
+    background-image: url("../../assets/images/select_story1.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.storyBox div {
+    padding-left: 12px;
+    padding-top: 15px;
+    color: #37488C;
+}
+
+#footerSpacer {
+    height: 50px;
+}
+
+.storyTitle {
+    font-weight: bold;
+    font-size: 20px;
+    padding-right: 12px;
+}
+
+.storyDescription {
+    padding-right: 10px;
+    font-size: 14px;
+}
+
+#readButtonContainer {
+    padding: 30px 10px 25px 12px;
+}
+
+#readButton {
+    background-color: #E7BE48;
+    color: #4A4A4A;
+    border: none;
+    width: 130px;
+    height: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20.5px;
+    font-weight: bold;
+    padding: 0px;
+}
+
+#readButton div {
+    margin: 0px;
+    padding: 0px;
+    color: #4A4A4A;
+    text-decoration: none;
+}
+
+#arrow {
+    margin-left: 10px;
+    height: 12px;
+}
