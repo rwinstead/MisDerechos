@@ -39,7 +39,7 @@
     align-items: center;
     height: auto;
     width: 100%;
-    background-color: #5D70BA;
+    background-color: #f5f5f5;
 }
 
 .aboutThisContent {
@@ -51,7 +51,7 @@
     font-weight: bold;
     font-size: 22px;
     margin: 20px 10px 0px 10px;
-    padding: 20px;
+    padding: 15px 20px 15px 5px;
     display: inline-block;
 }
 
@@ -62,13 +62,13 @@
 
 .aboutThisYellow {
     font-size: 20px;
-    color: #F0DB9A;
+    color: #37488C;
     padding: 20px 20px 0px 20px;
 }
 
 .aboutThisAffiliation {
     font-size: 12px;
-    color: #cecece;
+    color: #4d4d4d;
     padding: 20px 20px 20px 25px;
 }
 

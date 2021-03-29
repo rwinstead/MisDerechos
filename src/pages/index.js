@@ -12,18 +12,9 @@ import heroText from "../assets/icons/homeHeroText.svg"
 //Example of multi class names:
 //className={`${styles.description} ${styles.yellow}`}
 
-export default class Home extends React.Component {
+export default function Home() {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-
-    return (
+  return (
       <main>
         <Navbar/>
         <section className={homeStyles.heroContainer}>
@@ -41,8 +32,8 @@ export default class Home extends React.Component {
 
         <section className={homeStyles.aboutThisContainer}>
           <div className={homeStyles.aboutThisContent}>
-            <span className={homeStyles.aboutThisHeader} style={{color: "white"}}>¿Qué es esta pagina web?</span>
-            <p className={homeStyles.aboutThisBody} style={{color:"white"}}>Esta página web es para educar a los inquilinos. Le mostramos historias de personas en situaciones difíciles que reclaman sus derechos contra el desalojo, sin importar el estado de su documentación.</p>
+            <span className={homeStyles.aboutThisHeader} style={{color: "#262626"}}>¿Qué es esta pagina web?</span>
+            <p className={homeStyles.aboutThisBody} style={{color:"#262626"}}>Esta página web es para educar a los inquilinos. Le mostramos historias de personas en situaciones difíciles que reclaman sus derechos contra el desalojo, sin importar el estado de su documentación.</p>
             <p className={homeStyles.aboutThisYellow}>Lea sus historias para ayudarle a comprender qué hacer cuando se enfrente a una situación similar.</p>
             <p className={homeStyles.aboutThisAffiliation}>*Mi Casa Mis Derechos se desarrolló en conjunto con estudiantes de maestría de Georgia Tech HCI y Welcoming Atlanta.</p>
           </div>  
@@ -52,5 +43,4 @@ export default class Home extends React.Component {
         
       </main>
     )
-  }
 }
