@@ -1,7 +1,7 @@
 #door {
     position: fixed;
-    top:20px;
-    right:20px;
+    top:30px;
+    right:33px;
     z-index: 2;
 }
 
