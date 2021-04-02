@@ -73,6 +73,7 @@
     color: #37488C;
     font-size: 19px;
     padding: 30px 0px 10px 15px;
+    /* font-weight: bold; */
 }
 
 .resourceItem {
@@ -83,10 +84,9 @@
 }
 
 .resourceDescription {
-    color: #9EA1AC;
+    color: #777777;
     font-size: 13px;
     padding-left: 10px;
-    font-weight: 300 lighter;
 }
 
 .bullet {
@@ -116,9 +116,8 @@
 
 #stepHeader span {
     color: #37488C;
-    font-weight: bold;
-    font-weight: 900;
-    font-size: 18px;
+    /* font-weight: bold; */
+    font-size: 19px;
     line-height: 27px;
     padding: 0px 0px 0px 15px;
     margin-top: 0px;

@@ -49,15 +49,6 @@ export default class Navbar extends React.Component {
           (
             <section className={navbarStyles.dropDownMenu}>
               <nav>
-                <div className={navbarStyles.dropDownItem}>
-                  <Link
-                      to="/resources/"
-                      id={navbarStyles.item}
-                      >
-                      Todos los recursos
-                  </Link>
-                 </div>
-
                   <div className={navbarStyles.dropDownItem}>
                     <Link
                     to="/story-select/"
@@ -66,6 +57,15 @@ export default class Navbar extends React.Component {
                     Selección de historias
                     </Link>
                   </div>
+
+                  <div className={navbarStyles.dropDownItem}>
+                  <Link
+                      to="/resources/"
+                      id={navbarStyles.item}
+                      >
+                      Todos los recursos
+                  </Link>
+                 </div>
 
                 <div className={navbarStyles.dropDownItem}>
                   <Link

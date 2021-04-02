@@ -39,7 +39,7 @@
     align-items: center;
     height: auto;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #F5F6F9;
 }
 
 .aboutThisContent {
@@ -48,28 +48,34 @@
 }
 
 .aboutThisHeader {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 22px;
     margin: 20px 10px 0px 10px;
     padding: 15px 20px 15px 5px;
     display: inline-block;
+    color: #37488C;
 }
 
 .aboutThisBody {
-    padding: 20px 20px 0px 20px;
+    padding: 20px 20px 15px 20px;
     margin: 0px;
+    color: #262626;
 }
 
 .aboutThisYellow {
-    font-size: 20px;
+    font-size: 21px;
     color: #37488C;
-    padding: 20px 20px 0px 20px;
+    margin: 20px 30px 0px 30px;
+    padding: 16px 0px 20px 0px;
+    border-top: 3px solid #DDE3FF;
+    border-bottom: 3px solid #DDE3FF;
+    font-weight: 500;
 }
 
 .aboutThisAffiliation {
     font-size: 12px;
-    color: #4d4d4d;
-    padding: 20px 20px 20px 25px;
+    color: #777777;
+    padding: 30px 20px 20px 25px;
 }
 
 .ctaButton {

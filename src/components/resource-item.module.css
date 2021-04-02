@@ -23,7 +23,7 @@
 
 .contactBlock {
     padding: 0px 0px 17px 15px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .contactRow {
@@ -78,7 +78,7 @@
 .textBlock div {
     padding: 0px 15px 15px 10px;
     color: #333333;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .bold {
@@ -92,10 +92,10 @@
 
 #notes {
     background-color: #F5F5F5;
-    margin: 0px 10px 20px 10px;
+    margin: 0px 10px 40px 10px;
     /* border: 0.5px solid #e9e9e9d3; */
     border-radius: 5px;
-    font-size: 11px;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;

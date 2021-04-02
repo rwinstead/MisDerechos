@@ -38,7 +38,7 @@ export default function StoryOverview() {
 
                 <section id={evictionOverviewStyles.resourcesContainer}>
                     <div id={evictionOverviewStyles.resourcesHeader}>
-                        Recursos usados en esta historia:
+                        Recursos usados en esta historia
                     </div>
 
                     <div className={evictionOverviewStyles.resourceItemContainer}>

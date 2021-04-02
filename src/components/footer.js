@@ -8,15 +8,15 @@ export default function Footer (){
         <div className={footerStyles.footerContainer}>
             <nav>
                 <Link
-                to="/resources/"
-                >
-                Todos los Recursos
-                </Link>
-
-                <Link
                 to="/story-select/"
                 >
                 Selección de historias
+                </Link>
+
+                <Link
+                to="/resources/"
+                >
+                Todos los recursos
                 </Link>
 
                 <Link

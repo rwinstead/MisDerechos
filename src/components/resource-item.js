@@ -35,7 +35,7 @@ export function ResourceItem(props) {
                 <div id={ResourceItemStyles.speaksSpanish}>{props.speaksSpanish}</div>
                 <div>
                     <span className={ResourceItemStyles.bold}>
-                    {"Descripción: "}
+                    {"Que hacen: "}
                     </span>
                     {props.description}
                 </div>
