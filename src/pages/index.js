@@ -34,7 +34,7 @@ export default function Home() {
             <span className={homeStyles.aboutThisHeader}>¿Qué es esta página web?</span>
             <p className={homeStyles.aboutThisBody} style={{color:"#262626"}}>Esta página web es para educar a los inquilinos sin importar el estado de su documentación. Le mostramos historias de personas en situaciones difíciles que reclaman sus derechos contra el desalojo.</p>
             <p className={homeStyles.aboutThisYellow}>Lea sus historias para ayudarle a comprender qué hacer cuando se enfrente a una situación similar.</p>
-            <p className={homeStyles.aboutThisAffiliation}>Mi Casa Mis Derechos se desarrolló en conjunto con estudiantes de maestría de Georgia Tech HCI y Welcoming Atlanta.</p>
+            <p className={homeStyles.aboutThisAffiliation}>Mi Casa Mis Derechos se desarrolló en conjunto con Welcoming Atlanta y estudiantes de maestría de Georgia Tech HCI.</p>
           </div>  
         </section>
 
