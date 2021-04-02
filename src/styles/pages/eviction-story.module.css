@@ -100,9 +100,9 @@
 
 .stepHeader {
     color:white;
-    max-width: 240px;
+    max-width: 70%;
     margin: 22px 0px 0px 20px;
-    opacity: 0.76;
+    opacity: 1;
     position: absolute;
     top:0;
 }
