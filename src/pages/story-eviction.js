@@ -145,7 +145,7 @@ step6HandleScroll(){
             <StoryBack
                 link = {'/story-eviction-overview/'} 
             /> 
-            <SideNav visibility={this.state} />
+            
             <ReactTooltip className={EvictionStoryStyles.toolTipContent} html={true}/>
 
             <InView threshold={.501} onChange={(inView, entry) => this.setState({step0Visible : inView})}>
@@ -754,7 +754,7 @@ step6HandleScroll(){
             </section>    
             )}
             </InView>
-
+            <SideNav visibility={this.state} />
         </main>
         );
     }

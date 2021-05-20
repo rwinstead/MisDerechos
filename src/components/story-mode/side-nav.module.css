@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    right: 30px;
+    right: 15px;
     top:100px;
     /* border: 5px solid palegreen; */
     z-index: 100;
@@ -23,14 +23,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     z-index: 101;
     font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 15px;
     text-decoration: none;
     box-shadow: none;
@@ -40,7 +40,7 @@
   }
 
   .circleEmpty {
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.25);
     color: rgba(255, 255, 255, 0.85);
   }
 
